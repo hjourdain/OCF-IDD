@@ -14,44 +14,44 @@
     "application/json"
   ],
   "paths": {
-		"/BloodPressureMonitorAMResURI?if=oic.if.ll": {
-			"get": {
+    "/BloodPressureMonitorAMResURI?if=oic.if.ll": {
+      "get": {
         "description": "",
-				"parameters": [
+        "parameters": [
           {
             "$ref": "#/parameters/interfaceLinkList"
           }
         ],
-				"responses": {
-					"200": {
-						"description": "",
-						"schema": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
               "$ref": "#/definitions/links"
-						}
-					}
-				}
-			}
-		},
-		"/BloodPressureMonitorAMResURI?if=oic.if.b": {
-			"get": {
-				"description": "",
-				"parameters": [
+            }
+          }
+        }
+      }
+    },
+    "/BloodPressureMonitorAMResURI?if=oic.if.b": {
+      "get": {
+        "description": "",
+        "parameters": [
           {
             "$ref": "#/parameters/interfaceBatch"
           }
         ],
-				"responses": {
-					"200": {
-						"description": "",
-						"schema": {
-							"$ref": "#/definitions/BatchGet"
-						}
-					}
-				}
-			},
-			"post": {
-				"description": "",
-				"parameters": [
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BatchGet"
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
           {
             "$ref": "#/parameters/interfaceBatch"
           },
@@ -67,37 +67,37 @@
             }
           }
         ],
-				"responses": {
-					"405": {
-						"description": "",
-						"schema": {
+        "responses": {
+          "405": {
+            "description": "",
+            "schema": {
               "$ref": "#/definitions/BloodPressureAMResp",
               "required": [
                 "BloodPressure"
               ]
             }
-					}
-				}
-			}
-		},
-		"/BloodPressureMonitorAMResURI?if=oic.if.baseline": {
-			"get": {
-				"description": "",
-				"parameters": [
+          }
+        }
+      }
+    },
+    "/BloodPressureMonitorAMResURI?if=oic.if.baseline": {
+      "get": {
+        "description": "",
+        "parameters": [
           {
             "$ref": "#/parameters/interfaceBaseline"
           }
         ],
-				"responses": {
-					"200": {
-						"description": "",
-						"schema": {
-							"$ref": "#/definitions/BloodPressureAM"
-						}
-					}
-				}
-			}
-		},
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BloodPressureAM"
+            }
+          }
+        }
+      }
+    },
     "/oic/p": {
       "get": {
         "description": "",
@@ -153,10 +153,9 @@
     }
   },
   "definitions": {
-    "BloodPressure" : {
+    "BloodPressure": {
       "properties": {
-        "rt":
-        {
+        "rt": {
           "description": "",
           "items": {
             "enum": [
@@ -168,22 +167,19 @@
           "readOnly": true,
           "type": "array"
         },
-        "systolic" :
-        {
+        "systolic": {
           "description": "",
           "minimum": 0,
           "readOnly": true,
           "type": "number"
         },
-        "diastolic" :
-        {
+        "diastolic": {
           "description": "",
           "minimum": 0,
           "readOnly": true,
           "type": "number"
         },
-        "units" :
-        {
+        "units": {
           "description": "",
           "enum": [
             "mmHg",
@@ -192,12 +188,10 @@
           "readOnly": true,
           "type": "string"
         },
-        "id" :
-        {
+        "id": {
           "$ref": "#/definitions/id"
         },
-        "if" :
-        {
+        "if": {
           "description": "",
           "items": {
             "enum": [
@@ -211,20 +205,21 @@
           "type": "array"
         }
       },
-      "type" : "object",
-      "required": ["systolic", "diastolic"]
+      "type": "object",
+      "required": [
+        "systolic",
+        "diastolic"
+      ]
     },
-    "PulseRate" : {
+    "PulseRate": {
       "properties": {
-        "pulserate" :
-        {
+        "pulserate": {
           "description": "",
           "minimum": 0,
           "readOnly": true,
           "type": "integer"
         },
-        "rt" :
-        {
+        "rt": {
           "description": "",
           "items": {
             "enum": [
@@ -236,12 +231,10 @@
           "readOnly": true,
           "type": "array"
         },
-        "id" :
-        {
+        "id": {
           "$ref": "#/definitions/id"
         },
-        "if" :
-        {
+        "if": {
           "description": "",
           "items": {
             "enum": [
@@ -255,8 +248,10 @@
           "type": "array"
         }
       },
-      "type" : "object",
-      "required": ["pulserate"]
+      "type": "object",
+      "required": [
+        "pulserate"
+      ]
     },
     "BloodPressureAM": {
       "properties": {
@@ -557,3 +552,4 @@
     }
   }
 }
+
