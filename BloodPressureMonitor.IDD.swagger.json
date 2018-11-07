@@ -98,170 +98,6 @@
 				}
 			}
 		},
-    "/ConfigurationResURI": {
-      "get": {
-        "parameters": [
-          {
-            "$ref": "#/parameters/interfaceGetConfiguration"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/GetConfiguration"
-            }
-          }
-        }
-      },
-      "post": {
-        "description": "",
-        "parameters": [
-          {
-            "$ref": "#/parameters/interfacePostConfiguration"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/PostConfiguration"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/PostConfiguration"
-            }
-          }
-        }
-      }
-    },
-    "/oic/rd": {
-      "get": {
-        "parameters": [
-          {
-            "$ref": "#/parameters/interfaceRD"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/SelectionRD"
-            }
-          }
-        }
-      },
-      "post": {
-        "description": "",
-        "parameters": [
-          {
-            "$ref": "#/parameters/interfaceRD"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/PublishRD"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/PublishRD"
-            }
-          }
-        }
-      }
-    },
-    "/oic/mnt": {
-      "get": {
-        "parameters": [
-          {
-            "$ref": "#/parameters/interfaceGetMNT"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/GetMaintenance"
-            }
-          }
-        }
-      },
-      "post": {
-        "description": "",
-        "parameters": [
-          {
-            "$ref": "#/parameters/interfacePostMNT"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/PostMaintenance"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/PostMaintenance"
-            }
-          }
-        }
-      }
-    },
-    "/nmonResURI": {
-      "get": {
-        "parameters": [
-          {
-            "$ref": "#/parameters/interfaceGetNMON"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/GetNetworkMonitoring"
-            }
-          }
-        }
-      },
-      "post": {
-        "description": "",
-        "parameters": [
-          {
-            "$ref": "#/parameters/interfacePostNMON"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/PostNetworkMonitoring"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/definitions/PostNetworkMonitoring"
-            }
-          }
-        }
-      }
-    },
     "/oic/p": {
       "get": {
         "description": "",
@@ -282,66 +118,6 @@
     }
   },
   "parameters": {
-    "interfaceRD": {
-      "in": "query",
-      "name": "if",
-      "type": "string",
-      "enum": [
-        "oic.if.baseline"
-      ]
-    },
-    "interfaceGetMNT": {
-      "in": "query",
-      "name": "if",
-      "type": "string",
-      "enum": [
-        "oic.if.rw",
-        "oic.if.baseline"
-      ]
-    },
-    "interfacePostMNT": {
-      "in": "query",
-      "name": "if",
-      "type": "string",
-      "enum": [
-        "oic.if.rw",
-        "oic.if.baseline"
-      ]
-    },
-    "interfaceGetNMON": {
-      "in": "query",
-      "name": "if",
-      "type": "string",
-      "enum": [
-        "oic.if.rw",
-        "oic.if.baseline"
-      ]
-    },
-    "interfacePostNMON": {
-      "in": "query",
-      "name": "if",
-      "type": "string",
-      "enum": [
-        "oic.if.rw"
-      ]
-    },
-    "interfaceGetConfiguration": {
-      "in": "query",
-      "name": "if",
-      "type": "string",
-      "enum": [
-        "oic.if.rw",
-        "oic.if.baseline"
-      ]
-    },
-    "interfacePostConfiguration": {
-      "in": "query",
-      "name": "if",
-      "type": "string",
-      "enum": [
-        "oic.if.rw"
-      ]
-    },
     "interface50": {
       "enum": [
         "oic.if.baseline",
@@ -406,13 +182,6 @@
           "readOnly": true,
           "type": "number"
         },
-        "map":
-        {
-          "description": "",
-          "minimum": 0,
-          "readOnly": true,
-          "type": "number"
-        },
         "units" :
         {
           "description": "",
@@ -422,25 +191,6 @@
           ],
           "readOnly": true,
           "type": "string"
-        },
-        "precision":
-        {
-          "$ref": "#/definitions/precision"
-        },
-        "value" :
-        {
-          "$ref": "#/definitions/value"
-        },
-        "n" : {
-          "$ref": "#/definitions/n"
-        },
-        "range" :
-        {
-          "$ref": "#/definitions/range"
-        },
-        "step" :
-        {
-          "$ref": "#/definitions/step"
         },
         "id" :
         {
@@ -486,26 +236,6 @@
           "readOnly": true,
           "type": "array"
         },
-        "step" :
-        {
-          "$ref": "#/definitions/step"
-        },
-        "precision" :
-        {
-          "$ref": "#/definitions/precision"
-        },
-        "value" :
-        {
-          "$ref": "#/definitions/value"
-        },
-        "n" :
-        {
-          "$ref": "#/definitions/n"
-        },
-        "range" :
-        {
-          "$ref": "#/definitions/range"
-        },
         "id" :
         {
           "$ref": "#/definitions/id"
@@ -527,89 +257,6 @@
       },
       "type" : "object",
       "required": ["pulserate"]
-    },
-    "UserID": {
-      "properties": {
-        "userid": {
-          "description": "",
-          "type": "string",
-          "readOnly": true
-        },
-        "rt": {
-          "description": "",
-          "items": {
-            "enum": [
-              "oic.r.userid"
-            ],
-            "type": "string"
-          },
-          "minItems": 1,
-          "readOnly": true,
-          "type": "array"
-        },
-        "if": {
-          "description": "",
-          "items": {
-            "enum": [
-              "oic.if.baseline",
-              "oic.if.s"
-            ],
-            "type": "string"
-          },
-          "minItems": 1,
-          "readOnly": true,
-          "type": "array"
-        }
-      },
-      "type": "object",
-      "required": [
-        "userid"
-      ]
-    },
-    "TimeStamp": {
-      "properties": {
-        "timestamp": {
-          "description": "",
-          "type": "string",
-          "format": "date-time",
-          "readOnly": true
-        },
-        "rt": {
-          "description": "",
-          "items": {
-            "enum": [
-              "oic.r.time.stamp"
-            ],
-            "type": "string"
-          },
-          "minItems": 1,
-          "readOnly": true,
-          "type": "array"
-        },
-        "if": {
-          "description": "",
-          "items": {
-            "enum": [
-              "oic.if.baseline",
-              "oic.if.s"
-            ],
-            "type": "string"
-          },
-          "minItems": 1,
-          "readOnly": true,
-          "type": "array"
-        },
-        "n": {
-          "$ref": "#/definitions/n"
-        },
-        "id": {
-          "$ref": "#/definitions/id"
-        }
-      },
-      "type": "object",
-      "required": [
-        "timestamp"
-      ]
     },
     "BloodPressureAM": {
       "properties": {
@@ -634,9 +281,7 @@
             "type": "string",
             "enum": [
               "oic.r.blood.pressure",
-              "oic.r.pulserate",
-              "oic.r.userid",
-              "oic.r.time.stamp"
+              "oic.r.pulserate"
             ]
           },
           "readOnly": true,
@@ -676,9 +321,6 @@
           "readOnly": true,
           "type": "array"
         },
-				"n": {
-          "$ref": "#/definitions/n"
-        },
         "id": {
           "$ref": "#/definitions/id"
         },
@@ -692,644 +334,36 @@
       "type": "object"
     },
     "BloodPressureAMResp": {
-      "type": "array",
-      "uniqueItems": true,
-      "minItems": 1,
-      "items": {
-        "anyOf": [
-          {
-            "$ref": "#/definitions/BloodPressure"
-          },
-          {
-            "$ref": "#/definitions/PulseRate"
-          },
-          {
-            "$ref": "#/definitions/UserID"
-          },
-          {
-            "$ref": "#/definitions/TimeStamp"
-          }
-        ]
-      }
-    },
-    "SelectionRD": {
-      "properties": {
-        "sel": {
-          "description": "",
-          "type": "integer",
-          "minimum": 0,
-          "maximum": 100,
-          "readOnly": true
-        },
-        "rt": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "maxLength": 64
-          },
-          "minItems": 1,
-          "readOnly": true,
-          "default": [
-            "oic.wk.rd"
-          ]
-        },
-        "if": {
-          "description": "",
-          "items": {
-            "enum": [
-              "oic.if.baseline"
-            ],
-            "type": "string"
-          },
-          "minItems": 1,
-          "readOnly": true,
-          "type": "array"
-        }
-      },
-      "required": [
-        "sel"
-      ],
-      "type": "object"
-    },
-    "PublishRD": {
-      "properties": {
-        "di": {
-          "description": "",
-          "type": "string",
-          "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
-        },
-        "ttl": {
-          "description": "",
-          "type": "integer"
-        },
-        "links": {
-          "description": "",
-          "$ref": "#/definitions/ArrayOfLinks"
-        },
-        "rt": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "maxLength": 64
-          },
-          "minItems": 1,
-          "readOnly": true,
-          "default": [
-            "oic.wk.rd"
-          ]
-        },
-        "if": {
-          "description": "",
-          "items": {
-            "enum": [
-              "oic.if.baseline"
-            ],
-            "type": "string"
-          },
-          "minItems": 1,
-          "readOnly": true,
-          "type": "array"
-        }
-      },
-      "required": [
-        "di",
-        "links",
-        "ttl"
-      ],
-      "type": "object"
-    },
-    "GetConfiguration": {
-      "properties": {
-        "n": {
-          "$ref": "#/definitions/n"
-        },
-        "loc": {
-          "type": "array",
-          "items": {
-            "type": "number"
-          },
-          "minItems": 2,
-          "maxItems": 2,
-          "description": ""
-        },
-        "locn": {
-          "type": "string",
-          "maxLength": 64,
-          "description": ""
-        },
-        "c": {
-          "type": "string",
-          "maxLength": 64,
-          "description": ""
-        },
-        "r": {
-          "type": "string",
-          "maxLength": 64,
-          "description": ""
-        },
-        "ln": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "language": {
-                "allOf": [
-                  {
-                    "type": "string",
-                    "pattern": "^[A-Za-z]{1,8}(-[A-Za-z0-9]{1,8})*$",
-                    "description": ""
-                  },
-                  {
-                    "description": ""
-                  }
-                ]
-              },
-              "value": {
-                "type": "string",
-                "maxLength": 64,
-                "description": ""
-              }
-            }
-          },
-          "minItems": 1,
-          "description": ""
-        },
-        "dl": {
-          "allOf": [
-            {
-              "type": "string",
-              "pattern": "^[A-Za-z]{1,8}(-[A-Za-z0-9]{1,8})*$",
-              "description": ""
-            },
-            {
-              "description": ""
-            }
-          ]
-        },
-        "rt": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "maxLength": 64
-          },
-          "minItems": 1,
-          "readOnly": true,
-          "default": [
-            "oic.wk.con"
-          ]
-        },
-        "if": {
-          "description": "",
-          "items": {
-            "enum": [
-              "oic.if.rw",
-              "oic.if.baseline"
-            ],
-            "type": "string"
-          },
-          "minItems": 1,
-          "readOnly": true,
-          "type": "array"
-        }
-      },
-      "required": [
-        "n"
-      ],
-      "type": "object"
-    },
-    "PostConfiguration": {
-      "properties": {
-        "n": {
-          "$ref": "#/definitions/n"
-        },
-        "loc": {
-          "type": "array",
-          "items": {
-            "type": "number"
-          },
-          "minItems": 2,
-          "maxItems": 2,
-          "description": ""
-        },
-        "locn": {
-          "type": "string",
-          "maxLength": 64,
-          "description": ""
-        },
-        "c": {
-          "type": "string",
-          "maxLength": 64,
-          "description": ""
-        },
-        "r": {
-          "type": "string",
-          "maxLength": 64,
-          "description": ""
-        },
-        "ln": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "language": {
-                "allOf": [
-                  {
-                    "type": "string",
-                    "pattern": "^[A-Za-z]{1,8}(-[A-Za-z0-9]{1,8})*$",
-                    "description": ""
-                  },
-                  {
-                    "description": ""
-                  }
-                ]
-              },
-              "value": {
-                "type": "string",
-                "maxLength": 64,
-                "description": ""
-              }
-            }
-          },
-          "minItems": 1,
-          "description": ""
-        },
-        "dl": {
-          "allOf": [
-            {
-              "type": "string",
-              "pattern": "^[A-Za-z]{1,8}(-[A-Za-z0-9]{1,8})*$",
-              "description": ""
-            },
-            {
-              "description": ""
-            }
-          ]
-        },
-        "rt": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "maxLength": 64
-          },
-          "minItems": 1,
-          "readOnly": true,
-          "default": [
-            "oic.wk.con"
-          ]
-        },
-        "if": {
-          "description": "",
-          "items": {
-            "enum": [
-              "oic.if.rw"
-            ],
-            "type": "string"
-          },
-          "minItems": 1,
-          "readOnly": true,
-          "type": "array"
-        }
-      },
+      "type": "object",
       "anyOf": [
         {
-          "required": [
-            "n"
-          ]
+          "$ref": "#/definitions/BloodPressure"
         },
         {
-          "required": [
-            "loc"
-          ]
-        },
-        {
-          "required": [
-            "locn"
-          ]
-        },
-        {
-          "required": [
-            "c"
-          ]
-        },
-        {
-          "required": [
-            "r"
-          ]
-        },
-        {
-          "required": [
-            "ln"
-          ]
-        },
-        {
-          "required": [
-            "dl"
-          ]
+          "$ref": "#/definitions/PulseRate"
         }
-      ],
-      "type": "object"
-    },
-    "GetMaintenance": {
-      "properties": {
-        "fr": {
-          "description": "",
-          "type": "boolean"
-        },
-        "rb": {
-          "description": "",
-          "type": "boolean"
-        },
-        "err": {
-          "description": "",
-          "type": "integer",
-          "readOnly": true,
-          "minimum": 399,
-          "maximum": 599
-        },
-        "rt": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "maxLength": 64
-          },
-          "minItems": 1,
-          "readOnly": true,
-          "default": [
-            "oic.wk.mnt"
-          ]
-        },
-        "if": {
-          "description": "",
-          "items": {
-            "enum": [
-              "oic.if.rw",
-              "oic.if.r",
-              "oic.if.baseline"
-            ],
-            "type": "string"
-          },
-          "minItems": 1,
-          "readOnly": true,
-          "type": "array"
-        }
-      },
-      "anyOf": [
-        {
-          "required": [
-            "fr"
-          ]
-        },
-        {
-          "required": [
-            "rb"
-          ]
-        },
-        {
-          "required": [
-            "err"
-          ]
-        }
-      ],
-      "type": "object"
-    },
-    "PostMaintenance": {
-      "properties": {
-        "fr": {
-          "description": "",
-          "type": "boolean"
-        },
-        "rb": {
-          "description": "",
-          "type": "boolean"
-        },
-        "err": {
-          "description": "",
-          "type": "integer",
-          "readOnly": true,
-          "minimum": 399,
-          "maximum": 599
-        },
-        "rt": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "maxLength": 64
-          },
-          "minItems": 1,
-          "readOnly": true,
-          "default": [
-            "oic.wk.mnt"
-          ]
-        },
-        "if": {
-          "description": "",
-          "items": {
-            "enum": [
-              "oic.if.rw",
-              "oic.if.baseline"
-            ],
-            "type": "string"
-          },
-          "minItems": 1,
-          "readOnly": true,
-          "type": "array"
-        }
-      },
-      "anyOf": [
-        {
-          "required": [
-            "fr"
-          ]
-        },
-        {
-          "required": [
-            "rb"
-          ]
-        },
-        {
-          "required": [
-            "err"
-          ]
-        }
-      ],
-      "type": "object"
-    },
-    "GetNetworkMonitoring": {
-      "properties": {
-        "ianaifType": {
-          "description": "",
-          "type": "integer",
-          "readOnly": true
-        },
-        "reset": {
-          "description": "",
-          "type": "boolean",
-          "readOnly": false
-        },
-        "col": {
-          "description": "",
-          "type": "boolean",
-          "readOnly": false
-        },
-        "tx": {
-          "description": "",
-          "type": "integer",
-          "readOnly": true
-        },
-        "rx": {
-          "description": "",
-          "type": "integer",
-          "readOnly": true
-        },
-        "mmstx": {
-          "description": "",
-          "type": "integer",
-          "readOnly": true
-        },
-        "amstx": {
-          "description": "",
-          "type": "integer",
-          "readOnly": true
-        },
-        "mmsrx": {
-          "description": "",
-          "type": "integer",
-          "readOnly": true
-        },
-        "amsrx": {
-          "description": "",
-          "type": "integer",
-          "readOnly": true
-        },
-        "rt": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "maxLength": 64
-          },
-          "minItems": 1,
-          "readOnly": true,
-          "default": [
-            "oic.wk.nmon"
-          ]
-        },
-        "if": {
-          "description": "",
-          "items": {
-            "enum": [
-              "oic.if.rw",
-              "oic.if.baseline"
-            ],
-            "type": "string"
-          },
-          "minItems": 1,
-          "readOnly": true,
-          "type": "array"
-        }
-      },
-      "required": [
-        "reset",
-        "col",
-        "ianaifType"
-      ],
-      "type": "object"
-    },
-    "PostNetworkMonitoring": {
-      "properties": {
-        "ianaifType": {
-          "description": "",
-          "type": "integer",
-          "readOnly": true
-        },
-        "reset": {
-          "description": "",
-          "type": "boolean",
-          "readOnly": false
-        },
-        "col": {
-          "description": "",
-          "type": "boolean",
-          "readOnly": false
-        },
-        "tx": {
-          "description": "",
-          "type": "integer",
-          "readOnly": true
-        },
-        "rx": {
-          "description": "",
-          "type": "integer",
-          "readOnly": true
-        },
-        "mmstx": {
-          "description": "",
-          "type": "integer",
-          "readOnly": true
-        },
-        "amstx": {
-          "description": "",
-          "type": "integer",
-          "readOnly": true
-        },
-        "mmsrx": {
-          "description": "",
-          "type": "integer",
-          "readOnly": true
-        },
-        "amsrx": {
-          "description": "",
-          "type": "integer",
-          "readOnly": true
-        },
-        "rt": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "maxLength": 64
-          },
-          "minItems": 1,
-          "readOnly": true,
-          "default": [
-            "oic.wk.nmon"
-          ]
-        },
-        "if": {
-          "description": "",
-          "items": {
-            "enum": [
-              "oic.if.rw"
-            ],
-            "type": "string"
-          },
-          "minItems": 1,
-          "readOnly": true,
-          "type": "array"
-        }
-      },
-      "required": [
-        "reset",
-        "col",
-        "ianaifType"
-      ],
-      "type": "object"
+      ]
     },
     "BatchGet": {
-      "properties": {
-        "href": {
-          "$ref": "#/definitions/href"
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "properties": {
+          "href": {
+            "$ref": "#/definitions/href"
+          },
+          "rep": {
+            "$ref": "#/definitions/BloodPressureAMResp"
+          }
         },
-        "rep": {
-          "$ref": "#/definitions/BloodPressureAMResp",
-          "required": [
-            "BloodPressure"
-          ]
-        }
-      },
-      "type": "object",
-      "required": [
-        "href",
-        "rep"
-      ]
+        "required": [
+          "href",
+          "rep"
+        ]
+      }
     },
     "links": {
       "type": "array",
@@ -1457,118 +491,6 @@
       ],
       "type": "object"
     },
-    "ArrayOfLinks": {
-      "properties": {
-        "links": {
-          "description": "",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "href": {
-                "$ref": "#/definitions/href"
-              },
-              "rel": {
-                "$ref": "#/definitions/rel"
-              },
-              "rt": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "maxLength": 64
-                },
-                "minItems": 1,
-                "description": ""
-              },
-              "if": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "enum": [
-                    "oic.if.baseline",
-                    "oic.if.ll",
-                    "oic.if.b",
-                    "oic.if.rw",
-                    "oic.if.r",
-                    "oic.if.a",
-                    "oic.if.s"
-                  ]
-                },
-                "minItems": 1,
-                "description": ""
-              },
-              "di": {
-                "description": "",
-                "type": "string",
-                "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
-              },
-              "p": {
-                "description": "",
-                "type": "object",
-                "properties": {
-                  "bm": {
-                    "description": "",
-                    "type": "integer"
-                  }
-                },
-                "required": [
-                  "bm"
-                ]
-              },
-              "title": {
-                "type": "string",
-                "maxLength": 64,
-                "description": ""
-              },
-              "anchor": {
-                "type": "string",
-                "maxLength": 256,
-                "description": "",
-                "format": "uri"
-              },
-              "ins": {
-                "type": "integer",
-                "description": ""
-              },
-              "type": {
-                "type": "array",
-                "description": "",
-                "items": {
-                  "type": "string",
-                  "maxLength": 64
-                },
-                "minItems": 1,
-                "default": "application/cbor"
-              },
-              "eps": {
-                "type": "array",
-                "description": "",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "ep": {
-                      "type": "string",
-                      "format": "uri",
-                      "description": ""
-                    },
-                    "pri": {
-                      "type": "integer",
-                      "minimum": 1,
-                      "description": ""
-                    }
-                  }
-                }
-              }
-            },
-            "required": [
-              "href",
-              "rt",
-              "if"
-            ]
-          }
-        }
-      }
-    },
     "oic.oic-link": {
       "type": "object",
       "properties": {
@@ -1581,9 +503,7 @@
             "type": "string",
             "enum": [
               "oic.r.blood.pressure",
-              "oic.r.pulserate",
-              "oic.r.userid",
-              "oic.r.time.stamp"
+              "oic.r.pulserate"
             ]
           },
           "minItems": 1,
@@ -1603,21 +523,6 @@
           "minItems": 1,
           "description": ""
         },
-        "rel": {
-          "$ref": "#/definitions/rel"
-        },
-        "di": {
-          "allOf": [
-            {
-              "description": "",
-              "type": "string",
-              "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
-            },
-            {
-              "description": "The device ID"
-            }
-          ]
-        },
         "p": {
           "description": "",
           "type": "object",
@@ -1630,50 +535,6 @@
           "required": [
             "bm"
           ]
-        },
-        "title": {
-          "type": "string",
-          "maxLength": 64,
-          "description": ""
-        },
-        "anchor": {
-          "type": "string",
-          "maxLength": 256,
-          "description": "",
-          "format": "uri"
-        },
-        "ins": {
-          "type": "integer",
-          "description": ""
-        },
-        "type": {
-          "type": "array",
-          "description": "",
-          "items": {
-            "type": "string",
-            "maxLength": 64
-          },
-          "minItems": 1,
-          "default": "application/cbor"
-        },
-        "eps": {
-          "type": "array",
-          "description": "",
-          "items": {
-            "type": "object",
-            "properties": {
-              "ep": {
-                "type": "string",
-                "format": "uri",
-                "description": ""
-              },
-              "pri": {
-                "type": "integer",
-                "minimum": 1,
-                "description": ""
-              }
-            }
-          }
         }
       },
       "required": [
@@ -1682,104 +543,16 @@
         "if"
       ]
     },
-    "n": {
-      "description": "",
-      "maxLength": 64,
-      "readOnly": true,
-      "type": "string"
-    },
     "id": {
       "description": "",
       "maxLength": 64,
       "readOnly": true,
       "type": "string"
     },
-    "precision":
-    {
-      "description": "",
-      "readOnly": true,
-      "type": "number"
-    },
-    "value" :
-    {
-      "anyOf": [
-        {
-          "type": "array"
-        },
-        {
-          "type": "string"
-        },
-        {
-          "type": "boolean"
-        },
-        {
-          "type": "integer"
-        },
-        {
-          "type": "number"
-        },
-        {
-          "type": "object"
-        }
-      ],
-      "description": ""
-    },
-    "range" :
-    {
-      "description": "",
-      "items": {
-        "anyOf": [
-          {
-            "type": "number"
-          },
-          {
-            "type": "integer"
-          }
-        ]
-      },
-      "maxItems": 2,
-      "minItems": 2,
-      "readOnly": true,
-      "type": "array"
-    },
-    "step" :
-    {
-      "anyOf": [
-        {
-          "type": "integer"
-        },
-        {
-          "type": "number"
-        }
-      ],
-      "description": "",
-      "readOnly": true
-    },
     "href": {
       "type": "string",
       "maxLength": 256,
       "format": "uri",
-      "description": ""
-    },
-    "rel": {
-      "oneOf": [
-        {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "maxLength": 64
-          },
-          "minItems": 1,
-          "default": [
-            "hosts"
-          ]
-        },
-        {
-          "type": "string",
-          "maxLength": 64,
-          "default": "hosts"
-        }
-      ],
       "description": ""
     }
   }
