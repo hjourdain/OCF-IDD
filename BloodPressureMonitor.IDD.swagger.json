@@ -134,7 +134,12 @@
             "type": "string"
           },
           "minItems": 1,
+          "maxItems": 1,
+          "uniqueItems": true,
           "readOnly": true,
+          "default": [
+            "oic.r.blood.pressure"
+          ],
           "type": "array"
         },
         "systolic": {
@@ -198,7 +203,12 @@
             "type": "string"
           },
           "minItems": 1,
+          "maxItems": 1,
+          "uniqueItems": true,
           "readOnly": true,
+          "default": [
+            "oic.r.pulserate"
+          ],
           "type": "array"
         },
         "id": {
@@ -236,7 +246,11 @@
           },
           "maxItems": 2,
           "minItems": 2,
-          "uniqueItems": true
+          "uniqueItems": true,
+          "default": [
+            "oic.r.bloodpressuremonitor-am",
+            "oic.wk.atomicmeasurement"
+          ]
         },
         "rts": {
           "type": "array",
@@ -469,8 +483,13 @@
             ]
           },
           "minItems": 1,
+          "maxItems": 2,
           "readOnly": true,
           "uniqueItems": true,
+          "default": [
+            "oic.r.blood.pressure",
+            "oic.r.pulserate"
+          ],
           "description": ""
         },
         "if": {
