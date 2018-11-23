@@ -247,6 +247,7 @@
           "maxItems": 2,
           "minItems": 2,
           "uniqueItems": true,
+          "readOnly": true,
           "default": [
             "oic.r.bloodpressuremonitor-am",
             "oic.wk.atomicmeasurement"
