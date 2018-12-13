@@ -503,6 +503,7 @@
             ]
           },
           "minItems": 1,
+          "readOnly": true,
           "description": ""
         },
         "p": {
